@@ -26,9 +26,11 @@ tongKQ = float(0)
 
 #Vòng lặp
 for i in range(lap):
-    print("Lặp lần thứ: ",i+1)
+    langGieng = random.randint(70,140)
+    print("=========================")
+    print("Lặp lần thứ: {0} - K: {1}".format(i+1,langGieng))
     #1.Khởi tạo mô hình knn với sự random 70 - 140  phần tử liền kề
-    model_KNN = KNeighborsClassifier(n_neighbors=random.randint(70,140))
+    model_KNN = KNeighborsClassifier(n_neighbors=langGieng)
 
     #2. Huấn luyện mô hình
     model_KNN.fit(x_train,y_train)
@@ -38,7 +40,7 @@ for i in range(lap):
 
     #4. Đánh giá 
     f1 = f1_score(y_test,y_pred,average="macro")
-    print('Độ chính xác: ',accuracy_score(y_test,y_pred)*100)
+    print(f'Độ chính xác: {accuracy_score(y_test,y_pred)*100:.2f}%')
     print(f'F1-score: {f1*100:.2f}%')
 
     #5.Lưu vào mảng
