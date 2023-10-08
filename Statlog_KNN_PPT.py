@@ -27,12 +27,9 @@ y_train = y_train.to_numpy()
 X_test = X_test.to_numpy()
 y_test = y_test.to_numpy()
 
-# Đặt lại tên cột Nhãn
-sat_train.rename(columns={36: 'Class'}, inplace=True)
-sat_test.rename(columns={36: 'Class'}, inplace=True)
 
 for ringloop in range(num_loop):
-    k = random.randint(80, 150)
+    k = random.randint(100, 150)
     print('-------------------------------')
     print(f'Lần lặp thứ {ringloop + 1}: Sử dụng K = {k}')
 
