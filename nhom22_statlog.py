@@ -27,7 +27,7 @@ y_test = data_test.values[:,-1]        #Lấy tất cả các hàng của cột 
 from sklearn.neighbors import KNeighborsClassifier
 
 #0. Các biến tham gia
-lap = 5        #Cho biết là sẽ lặp 5 lần
+lap = 10        #Cho biết là sẽ lặp 5 lần
 tongKQ = float(0)
 
 #Vòng lặp
@@ -61,7 +61,7 @@ print(f"Trung Bình cộng của F1 khi thực hiện 5 lần lặp bằng phư�
 from sklearn.tree import DecisionTreeClassifier
 #Các biến tham gia
 TongKQ_DTC = float(0)
-
+SoLuongNgauNhien = random.randint(100,150)
 
 #Vòng lặp
 print('\tDự đoán nhãn bằng phương pháp cây quyết định')
@@ -88,7 +88,7 @@ for i in range(lap):
     print(f'Recall: {Recall*100:.3f}%')
 
     #Tổng kết quả F1 sau mỗi lần lặp
-    TongKQ_DTC+=f1
+    TongKQ_DTC+=F1
 
 #Tính trung bình cộng của F1 sau 5 lần lặp
 print(f"Trung Bình cộng của F1 khi thực hiện 5 lần lặp bằng phương pháp Cây quyết định: {(TongKQ_DTC/lap)*100:.3f}%")
